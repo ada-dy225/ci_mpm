@@ -1,5 +1,6 @@
 from functools import cache
-__all__ = ['my_sum', 'factorial']
+import numpy as np
+__all__ = ['my_sum', 'factorial','sin']
 
 
 def my_sum(iterable):
@@ -13,3 +14,9 @@ def my_sum(iterable):
 def factorial(n):
 
     return n * factorial(n-1) if n else 1
+
+
+@cache
+def sin(x):
+
+    return np.sin(x)

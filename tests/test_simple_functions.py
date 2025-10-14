@@ -1,6 +1,6 @@
 import pytest
-
-from simple_functions import my_sum, factorial
+import numpy as np
+from simple_functions import my_sum, factorial, sin
 
 
 class TestSimpleFunctions(object):
@@ -24,3 +24,15 @@ class TestSimpleFunctions(object):
         '''Test our factorial function'''
         answer = factorial(number)
         assert answer == expected
+
+    @pytest.mark.parametrize('angle, expected', [
+        (0, 0),
+        (np.pi / 2, 1.0),
+        (np.pi, 0),
+        (3 * np.pi / 2, -1.0),
+        (2 * np.pi, 0)
+    ])
+    def test_sin(self, angle, expected):
+        '''Test our sin function'''
+        answer = sin(angle)
+        assert np.isclose(answer, expected)
