@@ -1,6 +1,6 @@
 from functools import cache
 import numpy as np
-__all__ = ['my_sum', 'factorial','sin']
+__all__ = ['my_sum', 'factorial', 'sin']
 
 
 def my_sum(iterable):
